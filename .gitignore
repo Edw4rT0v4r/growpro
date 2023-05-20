@@ -1,0 +1,13 @@
+### IntelliJ project files
+.idea
+*.iml
+.phpunit.cache
+
+###> project ###
+/vendor/
+###< project ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

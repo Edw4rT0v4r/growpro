@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  webserver:
+    build:
+      args:
+        user: application
+        uid: 1000
+      context: .
+      dockerfile: docker/Dockerfile
+    working_dir: /var/www
+    volumes:
+      - .:/var/www/growpro
+    ports:
+      - "8080:80"
+    networks:
+      back-network:
+        ipv4_address: 174.192.0.2
+
+networks:
+  back-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 174.192.0.0/16
